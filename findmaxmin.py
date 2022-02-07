@@ -9,12 +9,12 @@
 import random
 
 def pseudorandom_list_generator():
-    random_list = random.sample(range(10000), 100)
-    return random_list
+    return random.sample(range(10000), 100)
 
 def search_max_und_min(array):
     max_value = array[0]
     min_value = array[0]
+
     for i in array:
         if i > max_value:
             max_value = i
@@ -22,11 +22,9 @@ def search_max_und_min(array):
             min_value = i
     
     return max_value,min_value
-
-        
-if __name__ == '__main__':
-    The_list = pseudorandom_list_generator()
-    res = search_max_und_min(The_list)
+     
+if __name__ == '__main__': 
+    res = search_max_und_min(pseudorandom_list_generator())
     print('Maior valor lido: {} \nMenor valor lido: {}'.format(res[0],res[1]))
 
 
