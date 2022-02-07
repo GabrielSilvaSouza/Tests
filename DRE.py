@@ -1,3 +1,19 @@
+#In this code we'll use OOP to finish the quest instead of using Procedural Programming just for fun.
+#Just for the record, the problem doesn't require OOP. It might even increase the loadwork, but once again, it's just for fun.
+
+#Firstly, in our _init_ class, we'll define all our instance attributes that'll make up our DRE validation
+#The DRE was subdivided in .year and .sequence using List Slicing to pull out the year and sequnce (Just to save some processing)
+
+#Keeping going, we use "check_year" to verify if our DRE is in the inclusive range of 1900 and 2022(CURRENT YEAR).
+#So, obviously, 2023 won't fit in our purpose. 
+
+# check_dre_size and getYear just see if the dre is in the usual size(9) and compute the year of it using some basic operations.
+
+# getDigit obtain the last number by summing up all digits taken in _init_ by self.sequence
+#it uses, once again, List Compreehension to do so, however, to sum up we have, beforehand, convert each number to an integer by using int().
+# The remainder must be equal the last digit, otherwise, it's not valid
+
+
 class StudentDre:
     def __init__(self,dre):
         self.dre = dre
@@ -6,10 +22,9 @@ class StudentDre:
     
     def check_year(self):
         diff = 2022 - self.year
-        if diff < 1900:
+        if diff > 2022: 
             return False
-        else: 
-            return True
+        return True
     
     def check_dre_size(self):
         if len(self.dre) == 9:
@@ -30,16 +45,14 @@ class StudentDre:
         res = 1900 + self.year
         return res
 
+if __name__ == '__main__':
+    dre = input('Input: ')
+    student = StudentDre(dre)
 
-dre = input('Input: ')
-student = StudentDre(dre)
-p = student.check_dre_size()
-q = student.check_year()
-r = student.getDigit()
-
-if (p and q and r == True):
-    print('Output: Matrícula válida do ano de {}'.format(student.getYear()))
-    print('-------------------------------------------------------')
-else:
-    print('Output: Matrícula inválida')
+    if ( student.check_dre_size() and student.check_year() and student.getDigit() == True ):
+        print('Output: Matrícula válida do ano de {}'.format(student.getYear()))
+        print('-'*40, sep='')
+    else:
+        print('Output: Matrícula inválida')
+        print('-'*30, sep='')
 
