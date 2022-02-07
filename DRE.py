@@ -1,4 +1,4 @@
-#In this code we'll use OOP to finish the quest instead of using Procedural Programming just for fun.
+#In this code we'll use OOP to finish the quest instead of using Procedural Programming. We're gonna do it just for fun.
 #Just for the record, the problem doesn't require OOP. It might even increase the loadwork, but once again, it's just for fun.
 
 #Firstly, in our _init_ class, we'll define all our instance attributes that'll make up our DRE validation
